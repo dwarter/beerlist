@@ -1,4 +1,4 @@
-Dpw2::Application.routes.draw do
+Danapp::Application.routes.draw do
   
   resources :users do
     member do
@@ -11,14 +11,14 @@ Dpw2::Application.routes.draw do
 
   
 
-  match '/beerbasics', :to => 'pages#beerbasics'
-  match '/brewtube', :to => 'pages#brewtube'
-  match '/events', :to => 'pages#events'
-  match '/contact', :to => 'pages#contact'
-  match '/about',   :to => 'pages#about'
-  match '/help',    :to => 'pages#help'
-  match '/signup',  :to => 'users#new'
-  match '/signin',  :to => 'sessions#new'
-  match '/signout', :to => 'sessions#destroy'
+  match '/beerbasics'=> 'pages#beerbasics'
+  match '/brewtube' => 'pages#brewtube'
+  match '/events' => 'pages#events'
+  match '/contact' => 'pages#contact'
+  match '/about' => 'pages#about'
+  match '/help' => 'pages#help'
+  match '/signup' => 'users#new'
+  match '/signin' => 'sessions#new'
+  match '/signout' => 'sessions#destroy'
   root :to => 'pages#home'
 end
