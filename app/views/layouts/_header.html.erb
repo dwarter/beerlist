@@ -1,0 +1,25 @@
+<header>
+ <logo>
+  <%= link_to logo2, root_path %>
+  </logo>
+  <nav class="round">
+    <ul >
+      <li><%= link_to homelink, root_path %></li>
+      <li><%= link_to beerbasicslink, beerbasics_path %></li>
+      <li><%= link_to brewtubelink, brewtube_path %></li>
+      <li><%= link_to eventslink, events_path %></li>
+      <li><%= link_to drinkerslink, users_path %></li>
+      
+      <% if signed_in? %>
+      <li><%= link_to profilelink, current_user %></li>
+      <li><%= link_to editprofilelink, edit_user_path(current_user) %></li>
+      <% end %>
+     
+      <% if signed_in? %>
+      <li><%= link_to signoutlink, signout_path, :method => :delete %></li>
+      <% else %>
+      <li><%= link_to signinlink, signin_path %></li>
+      <% end %>
+    </ul>
+  </nav>
+</header>

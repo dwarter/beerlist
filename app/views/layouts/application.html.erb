@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <%= csrf_meta_tag %>
+    <%= render 'layouts/stylesheets' %>
+    <%= javascript_include_tag :defaults %>
+  </head>
+  <body>
+  	 <%= link_to dart, root_path %>
+  	 <%= link_to dartboard, root_path %>
+  	 
+    <div class="container">
+    	<%= render 'layouts/header' %>
+     
+      <section class="shading">
+      	<% flash.each do |key, value| %>
+          <div class="flash <%= key %>"><%= value %></div>
+        <% end %>
+        <%= link_to tack, root_path %>
+        <%= link_to tack2, root_path %>
+        <%= yield %>
+      </section>
+      <%= render 'layouts/footer' %>
+      <%= debug(params) if Rails.env.development? %>
+    </div>
+  </body>
+</html>

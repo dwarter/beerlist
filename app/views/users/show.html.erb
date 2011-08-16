@@ -1,0 +1,30 @@
+<center>
+	<h1><%= @user.name %></h1>
+</center>
+<table class="profile" summary="Profile information">
+  <tr>
+    <td class="main">
+      <info>
+        <%= gravatar_for @user %>
+        <ul>
+    	<li><strong><u>Hometown:</u></strong> <%= @user.hometown %></li>
+    	<li><strong><u>Beer of Choice:</u></strong> <%= @user.beer %></li>
+    	<li><strong><u>Skill:</u></strong> <%= @user.skill %></li>
+      </info>
+    </ul>
+     
+    <%= render 'follow_form' if signed_in? %>
+    <% unless @user.microposts.empty? %>
+        <table class="microposts" summary="User microposts">
+          <%= render @microposts %>
+        </table>
+      <% end %>
+    </td>
+    <td class="sidebar round">
+      <strong>Name</strong> <%= @user.name %><br />
+      <strong>URL</strong> <%= link_to user_path(@user), @user %><br />
+      <strong>Microposts</strong> <%= @user.microposts.count %>
+      <%= render 'shared/stats' %>
+    </td>
+  </tr>
+</table>
