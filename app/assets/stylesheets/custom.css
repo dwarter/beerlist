@@ -155,6 +155,12 @@ info img {
  float: left;
 }
 
+info2 ul {
+ list-style: none;
+ padding: 15px 0 0 15px;
+ 
+}
+
 footer {
   text-align: center;
   margin-top: 10px;

@@ -1,8 +1,9 @@
 class Micropost < ActiveRecord::Base
-	attr_accessible :content
+	attr_accessible :content, :newbeer, :grade
 	
 	belongs_to :user
-	
+	validates :newbeer, :presence => true, :length => { :maximum => 140 }
+	validates :grade, :presence => true, :length => { :maximum => 140 }
 	validates :content, :presence => true, :length => { :maximum => 140 }
     validates :user_id, :presence => true
 	
