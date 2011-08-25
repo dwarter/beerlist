@@ -1,5 +1,7 @@
 Danapp::Application.routes.draw do
-  
+  resources :blahs
+  match 'gravatar' => 'blahs#gravatar'
+
   resources :users do
     member do
       get :following, :followers

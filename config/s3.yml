@@ -1,0 +1,9 @@
+development:
+  access_key_id: AKIAJTRU2M5RIGQEZ2TQ
+  secret_access_key: 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
+  bucket: dansbeerlist
+  
+production:
+  access_key_id: AKIAJTRU2M5RIGQEZ2TQ
+  secret_access_key: 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
+  bucket: dansbeerlist

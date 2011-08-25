@@ -5,7 +5,13 @@
   <tr>
     <td class="main">
       <info>
-        <%= gravatar_for @user %>
+				<% if @user.gravatar %>	
+					<%= image_tag(@user.gravatar.url, :size => '75x75')%>
+				<% else %>
+        	<%= gravatar_for @user %>
+				<% end %>
+				
+				<%= link_to "Edit Gravatar Image", edit_blah_path(@user) %>
         <ul>
     	<li><strong><u>Hometown:</u></strong> <%= @user.hometown %></li>
     	<li><strong><u>Beer of Choice:</u></strong> <%= @user.beer %></li>
@@ -28,3 +34,6 @@
     </td>
   </tr>
 </table>
+
+
+

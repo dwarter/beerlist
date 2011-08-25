@@ -1,0 +1,5 @@
+<%= form_for @gravatar, :as=>:gravatar, :url => {:action => 'gravatar'}, :method => :post do |f| %>
+	<%= f.hidden_field :user_id, :value => @user.id %>
+	<%= f.file_field :image %>
+	<%= f.submit 'asdf'%>
+<% end %>
