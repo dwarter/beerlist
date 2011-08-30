@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110825182853) do
+ActiveRecord::Schema.define(:version => 20110830032707) do
+
+  create_table "beers", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "microposts", :force => true do |t|
     t.string    "content"
@@ -49,7 +56,7 @@ ActiveRecord::Schema.define(:version => 20110825182853) do
     t.string    "skill"
     t.string    "gravatar_file_name"
     t.integer   "gravatar_file_size"
-    t.datetime  "gravatar_updated_at"
+    t.timestamp "gravatar_updated_at"
     t.string    "gravatar_content_type"
   end
 
