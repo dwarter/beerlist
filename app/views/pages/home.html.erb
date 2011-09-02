@@ -1,11 +1,12 @@
 <center>
-	<h1>Test</h1>
-</center>
+	<h1><u>Home</u></h1>
+	</center>
 <% if signed_in? %>
+  <%= render 'shared/news' %>
   <table class="front" summary="For signed-in users">
     <tr>
       <td class="main">
-        <h1 class="micropost">What's up?</h1>
+        <h1 class="micropost">Post a new beer!</h1>
         <%= render 'shared/micropost_form' %>
         <%= render 'shared/feed' %>
       </td>
