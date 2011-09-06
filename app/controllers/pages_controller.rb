@@ -5,6 +5,7 @@ class PagesController < ApplicationController
       @micropost = Micropost.new
       @feed_items = current_user.feed
     end
+    @mostrecentmicroposts = Micropost.order("created_at desc").limit(3)
   end
 
 def beerbasics

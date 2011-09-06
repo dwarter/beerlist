@@ -101,6 +101,9 @@ GEM
       actionpack (~> 3.1.0.rc6)
       railties (~> 3.1.0.rc6)
       sass (>= 3.1.4)
+    simple_form (1.4.2)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
     sprockets (2.0.0.beta.14)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -135,6 +138,7 @@ DEPENDENCIES
   pg
   rails (= 3.1.0.rc6)
   sass-rails (~> 3.1.0.rc)
+  simple_form
   sqlite3
   therubyracer-heroku (= 0.8.1.pre3)
   turn

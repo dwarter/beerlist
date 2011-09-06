@@ -319,11 +319,11 @@ center {
 text-align: center;
 margin-left: auto;
 margin-right: auto;
-margin-bottom: 2em;
+
 
 }
 
 center h1 {
-	font-family:"Stencil Std",Georgia,Serif;
+	font-family:"Stencil Std",Times,Serif;
 	font-style:italic;
 }

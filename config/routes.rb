@@ -23,5 +23,7 @@ Danapp::Application.routes.draw do
   match '/signup' => 'users#new'
   match '/signin' => 'sessions#new'
   match '/signout' => 'sessions#destroy'
+  match '/microposts/:id/destroy' => 'microposts#destroy', :as => :destroy_micropost
+  match '/users/:id/destroy' => 'users#destroy', :as => :destroy_user
   root :to => 'pages#home'
 end

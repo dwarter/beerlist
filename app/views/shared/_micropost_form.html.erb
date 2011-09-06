@@ -1,18 +1,9 @@
-<%= form_for @micropost do |f| %>
-  <%= render 'shared/error_messages', :object => f.object %>
-  <div class="field">
-  	<strong>Beer</strong><br />
-    <%= f.text_field :newbeer %>
-  </div>
-  <div class="field">
-  	<strong>Grade</strong><br />
-    <%= f.text_field :grade %>
-  </div>
-  <div class="field">
-  	<strong>Comments</strong><br />
-    <%= f.text_area :content %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Cheers!" %>
-  </div>
+<%= simple_form_for @micropost do |f| %>
+ <%= render 'shared/error_messages', :object => f.object %>
+  <%= f.input :newbeer %>
+  <%= f.input :grade, :collection => ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "F+", "F", "F-"]%>
+  <%= f.label :content, "Comments" %>
+  <%= f.text_area :content %>
+  <%= f.button :submit, "Cheers!"%>
+ 
 <% end %>
