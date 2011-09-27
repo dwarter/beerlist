@@ -1,7 +1,7 @@
 Danapp::Application.routes.draw do
  
-  get "participation/new"
-
+  match 'asdfasdfasdf' => 'participations#create', :as => :register_for_event
+  match 'participations/:event_id/destroy' => 'participations#destroy', :as => :destroy_participation
   resources :blahs
   resources :eventspic
   match 'gravatar' => 'blahs#gravatar'

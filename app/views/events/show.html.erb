@@ -4,19 +4,17 @@
 <table class="profile" summary="Profile information">
   <tr>
     <td class="main">
-      <info>
-      
-				<% if @event.eventpic_file_name %>	
-					<%= image_tag(@event.eventpic.url, :height => '150')%>
-				
-				<% end %>
-				<%= link_to "Edit Gravatar Image", edit_eventspic_path(@event) %>
-        <ul>
-    	<li><strong><u>Date/Time:</u></strong> <%= @event.date %></li>
-    	<li><strong><u>Place:</u></strong> <%= @event.location %></li>
-    	<li><strong><u>Description:</u></strong> <%= @event.description %></li>
-      </info>
-    </ul>
+      <%= render :partial => 'event_info' %>
+
+			<% check_status_for_an_event(@event) do %> 
+				<%= render :partial => 'event_sign_up_form' %>
+			<% end %>
+			
+			
+			<% unregister_status_check(@event) do %>
+				<%= link_to "Unregister", destroy_participation_path(@event) %>
+			<% end %>
+			
     </td>
   </tr>
 </table>
