@@ -1,6 +1,11 @@
 Danapp::Application.routes.draw do
+ 
+  get "participation/new"
+
   resources :blahs
+  resources :eventspic
   match 'gravatar' => 'blahs#gravatar'
+  match 'eventpic' => 'eventspic#eventpic'
 
   resources :users do
     member do
@@ -11,12 +16,13 @@ Danapp::Application.routes.draw do
   resources :microposts, :only => [:create, :destroy]
   resources :relationships, :only => [:create, :destroy]
   resources :beers
-
+  resources :events
   
 
   match '/beerbasics'=> 'pages#beerbasics'
   match '/brewtube' => 'pages#brewtube'
-  match '/events' => 'pages#events'
+  
+  
   match '/contact' => 'pages#contact'
   match '/about' => 'pages#about'
   match '/help' => 'pages#help'

@@ -6,12 +6,12 @@
     <td class="main">
       <info>
 				<% if @user.gravatar_file_name %>	
-					<%= image_tag(@user.gravatar.url, :size => '75x75')%>
+					<%= image_tag(@user.gravatar.url, :height => '100')%>
 				<% else %>
-        	<%= gravatar_for @user %>
+        	<%= link_to default, edit_blah_path(@user) %>
 				<% end %>
 				
-				<%= link_to "Edit Gravatar Image", edit_blah_path(@user) %>
+				<%= link_to "Edit Drinker Image", edit_blah_path(@user) %>
         <ul>
     	<li><strong><u>Hometown:</u></strong> <%= @user.hometown %></li>
     	<li><strong><u>Beer of Choice:</u></strong> <%= @user.beer %></li>

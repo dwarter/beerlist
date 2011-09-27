@@ -1,0 +1,19 @@
+<%= form_for(@event) do |f| %>
+	
+	<div class="field">
+		<%= f.text_field :name %>
+		</div>
+		<div class="field">
+		<%= f.date_select :date %>
+		</div>
+		<div class="field">
+		<%= f.text_field :location %>
+		</div>
+		<div class="field">
+			<%= f.text_area :description %>
+		</div>
+		<%= f.file_field :eventpic%>
+		<div class="actions">
+		<%= f.submit "Create" %>
+	</div>
+<% end %>

@@ -1,0 +1,22 @@
+<center>
+	<h1><%= @event.name %></h1>
+</center>
+<table class="profile" summary="Profile information">
+  <tr>
+    <td class="main">
+      <info>
+      
+				<% if @event.eventpic_file_name %>	
+					<%= image_tag(@event.eventpic.url, :height => '150')%>
+				
+				<% end %>
+				<%= link_to "Edit Gravatar Image", edit_eventspic_path(@event) %>
+        <ul>
+    	<li><strong><u>Date/Time:</u></strong> <%= @event.date %></li>
+    	<li><strong><u>Place:</u></strong> <%= @event.location %></li>
+    	<li><strong><u>Description:</u></strong> <%= @event.description %></li>
+      </info>
+    </ul>
+    </td>
+  </tr>
+</table>

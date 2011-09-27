@@ -4,6 +4,7 @@ class PagesController < ApplicationController
     if signed_in?
       @micropost = Micropost.new
       @feed_items = current_user.feed
+      logger.info "..........................................my name is Dan"
     end
     @mostrecentmicroposts = Micropost.order("created_at desc").limit(3)
   end

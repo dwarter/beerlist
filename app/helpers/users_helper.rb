@@ -4,5 +4,11 @@ module UsersHelper
                                             :class => 'gravatar',
                                             :gravatar => options)
   end
+    def default
+    	image_tag("gravatar.png", :alt => "Your Pic", :class => "round", :size => 100)
+    end
+    
 end
+
+
 

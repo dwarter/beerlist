@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   has_many :microposts, :dependent => :destroy
   has_many :relationships, :foreign_key => "follower_id",
                            :dependent => :destroy
+  has_many :participations
+  has_many :events, :through => :participations
   has_many :following, :through => :relationships, :source => :followed
   has_many :reverse_relationships, :foreign_key => "followed_id",
                                    :class_name => "Relationship",
