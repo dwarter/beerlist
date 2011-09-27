@@ -1,5 +1,5 @@
 module EventsHelper
-   def event1
-	image_tag("events/event1.png", :alt => "Your Event", :class => "round")
+   def default_image_for_events
+	   image_tag("events/event1.png", :alt => "Your Event", :class => "round")
    end
 end

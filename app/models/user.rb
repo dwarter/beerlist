@@ -25,12 +25,7 @@ class User < ActiveRecord::Base
   validates :email, :presence => true,
                     :format   => { :with => email_regex },
                     :uniqueness => { :case_sensitive => false }
-  validates :hometown,  :presence => true,
-                    :length   => { :maximum => 50 }
-  validates :beer,  :presence => true,
-                    :length   => { :maximum => 50 }
-  validates :skill,  :presence => true,
-                    :length   => { :maximum => 300 }
+
 
 # Automatically create the virtual attribute 'password_confirmation'.
   validates :password, :presence     => true,
