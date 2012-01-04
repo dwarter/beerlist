@@ -1,6 +1,10 @@
 Danapp::Application.routes.draw do
  
-  get "participation/new"
+  resources :forums, :only => [:create, :destroy]
+ 
+
+  match 'event_registration' => 'participations#create',  :as => :register_for_event
+  match 'participations/:event_id/destroy' => 'participations#destroy', :as => :destroy_participation
 
   resources :blahs
   resources :eventspic
@@ -25,6 +29,7 @@ Danapp::Application.routes.draw do
   
   match '/contact' => 'pages#contact'
   match '/about' => 'pages#about'
+  
   match '/help' => 'pages#help'
   match '/signup' => 'users#new'
   match '/signin' => 'sessions#new'

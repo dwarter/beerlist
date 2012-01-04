@@ -6,15 +6,18 @@ class UsersController < ApplicationController
   def index
     @title = "Drinkers"
     @users = User.paginate(:page => params[:page])
-   
-    
-   
+    if signed_in?
+      @micropost = Micropost.new
+    end
   end
 	
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts
     @title = @user.name
+    if signed_in?
+      @micropost = Micropost.new
+    end
   end
   
   def new
@@ -36,6 +39,9 @@ class UsersController < ApplicationController
   
   def edit
     @title = "Edit profile"
+    if signed_in?
+      @micropost = Micropost.new
+    end
   end
   
   def update
@@ -47,19 +53,29 @@ class UsersController < ApplicationController
       @title = "Edit profile"
       render 'edit'
     end
+    if signed_in?
+      @micropost = Micropost.new
+    end
   end
   
   def following
     @title = "Following"
     @user = User.find(params[:id])
     @users = @user.following
+    if signed_in?
+      @micropost = Micropost.new
+    end
     render 'show_follow'
+    
   end
 
   def followers
     @title = "Followers"
     @user = User.find(params[:id])
     @users = @user.followers
+    if signed_in?
+      @micropost = Micropost.new
+    end
     render 'show_follow'
   end
   

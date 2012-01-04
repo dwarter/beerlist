@@ -15,17 +15,31 @@ module ApplicationHelper
   def logo2
     image_tag("logo2.png", :alt => "Sample App", :class => "round")
   end
-  def tack
-    image_tag("tack.png", :alt => "Tack")
+  def logo
+    image_tag("logo.gif", :alt => "Sample App", :class => "round")
   end
-  def tack2
-    image_tag("tack2.png", :alt => "Tack2", :class => "right")
+  def userinfo
+    image_tag("userinfo.png", :alt => "Sample App", :class => "round")
   end
+  def list
+    image_tag("list.png", :alt => "Sample App", :class => "round")
+  end
+  def list2
+    image_tag("list2.png", :alt => "Sample App", :class => "round")
+  end
+  def homelinkselect
+    image_tag("links/homelinkselect.gif", :alt => "Sample App", :class => "round")
+  end
+  
   def dartboard
     image_tag("dartboard.png", :alt => "Dartboard", :class => "rightoutside")
   end
   def dart
     image_tag("dart.png", :alt => "Dart", :class => "leftoutside")
+  end
+  
+  def arrow
+    image_tag("arrow.png", :alt => "arrow", :class => "leftoutside")
   end
   
   # Link pics
@@ -57,6 +71,30 @@ module ApplicationHelper
   def signinlink
     image_tag("links/signinlink.png", :alt => "Sign in", :class => "round")
   end
+  
+  
+  # Drinker Levels
+  
+  def level0
+    image_tag("levels/level0.png", :alt => "Sober", :class => "round")
+  end
+  def level1
+    image_tag("levels/level1.png", :alt => "Buzzed", :class => "round")
+  end
+  def level2
+    image_tag("levels/level2.png", :alt => "Drunk", :class => "round")
+  end
+  def level3
+    image_tag("levels/level3.png", :alt => "Wasted", :class => "round")
+  end
+  def level4
+    image_tag("levels/level4.png", :alt => "Shitfaced", :class => "round")
+  end
+  def level5
+    image_tag("levels/level5.png", :alt => "Blackout", :class => "round")
+  end
 end
+
+
 
 

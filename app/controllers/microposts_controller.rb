@@ -10,6 +10,7 @@ class MicropostsController < ApplicationController
     else
       @feed_items = []
       render 'pages/home'
+      
     end
   end
 

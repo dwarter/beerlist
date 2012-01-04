@@ -2,6 +2,9 @@ class EventspicController < ApplicationController
   respond_to :js, :html
   def edit
     @event=Event.find(params[:id])
+    if signed_in?
+      @micropost = Micropost.new
+    end
   end
   def eventpic
     logger.info { "---eventpic #{params[:eventpic]}" }
@@ -11,7 +14,9 @@ class EventspicController < ApplicationController
     @event.eventpic = eventpichash[:image]
     logger.info { "-----#{@event.eventpic_file_name}" }
     @event.save(:validate => false)
+    
     redirect_to @event
+    
   end
   def update
     @event=Event.find(params[:id])

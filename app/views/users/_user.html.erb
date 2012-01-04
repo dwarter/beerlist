@@ -1,6 +1,9 @@
 <li>
- 
-     <%= link_to default, user %>
+ 	<% if user.gravatar_file_name %>
+     <%= link_to image_tag(user.gravatar, :width => '150'), user %>
+     <% else %>
+        	<%= link_to default %>
+				<% end %>
     
      <%= link_to user.name, user %>
   <% if current_user.admin? %>

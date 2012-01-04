@@ -1,11 +1,40 @@
 <div class="user_info">
-  <a href="<%= user_path(current_user) %>">
-    <%= gravatar_for current_user, :size => 100 %>
-    <span class="user_name">
-      <%= current_user.name %>
-    </span>
-    <span class="microposts">
-      <%= pluralize(current_user.microposts.count, "micropost") %>
-    </span>
-  </a>
+  
+
+  
+    
+
+   
+      <h3>What's up, <%=truncate(current_user.name, :length => 15)%>?</h3>
+   
+
+<table>
+	<tr>
+		<td><% if current_user.gravatar_file_name %>	
+					<%= image_tag(current_user.gravatar.url, :height => '70', :width =>'70')%>
+				<% else %>
+        	<%= link_to default2 %>
+				<% end %>
+		</td>
+		<td>
+		<ul>
+			<li><a href="<%= user_path(current_user) %>">Profile</a></li>
+			<li>
+           <a href="<%= user_path(current_user) %>"> <%= pluralize(current_user.microposts.count, "Beer Post") %> </a>
+            </li>
+        <li>
+        <% @user ||= current_user %>
+        <a href="<%= following_user_path(@user) %>">
+            <%= current_user.following.count %> following
+        </a>
+        </li>
+        <li>
+        <a href="<%= followers_user_path(@user) %>">
+            <%= pluralize(current_user.followers.count, "follower") %></a>
+        </li>
+        </ul>
+        </td>
+        </tr>
+        </table>
+  
 </div>

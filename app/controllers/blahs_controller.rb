@@ -2,6 +2,9 @@ class BlahsController < ApplicationController
   respond_to :js, :html
   def edit
     @user=User.find(params[:id])
+    if signed_in?
+      @micropost = Micropost.new
+    end
   end
   def gravatar
     logger.info { "---gravatar #{params[:gravatar]}" }
@@ -23,7 +26,6 @@ class BlahsController < ApplicationController
       render :action => 'new'
     end
   end
-  def show
-  end
+  
 
 end

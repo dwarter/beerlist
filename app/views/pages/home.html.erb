@@ -2,25 +2,32 @@
 	<h1><u>*Home</u></h1>
 	</center>
 <% if signed_in? %>
-  <%= render 'shared/news' %>
   <div id="recentmircoposts">
   	<% @mostrecentmicroposts.each do |m|%>
   		<%=truncate(m.content, :length =>5)%>
   		<%= link_to "microposts", micropost_path(m)%>
   	<%end%>
-  	
   </div>
+  
+  <info2>
+  	<h2>Upcoming Events:</h2>
+  		<% @mostrecentevents.each do |m|%>
+  		<ul>
+  		<%=image_tag(m.eventpic, :width => '200')%>
+  		<li><%=truncate(m.name, :length =>100)%></li>
+  		<li><%=truncate(m.description, :length =>200)%></li>
+  		<li><%= link_to "Checkout", event_path(m)%></li>
+  		</ul>
+  	<%end%>
+  </info2>
+ 
   <table class="front" summary="For signed-in users">
     <tr>
       <td class="main">
-        <h1 class="micropost">Post a new beer!</h1>
-        <%= render 'shared/micropost_form' %>
+       <h2>Your Daily Feeds:</h2>
         <%= render 'shared/feed' %>
       </td>
-      <td class="sidebar round">
-        <%= render 'shared/user_info' %>
-        <%= render 'shared/stats' %>
-      </td>
+      
     </tr>
   </table>
 <% else %>

@@ -1,8 +1,21 @@
 <li>
+	<table>
+		<tr>
+			<td>
+   <info>
 	<% if event.eventpic_file_name %>
-		<%= link_to image_tag(event.eventpic.url), event_path(event.id)%>
+		<%= link_to image_tag(event.eventpic.url, :width => '200'), event_path(event.id)%>
 	<% else %>
   	<%= link_to default_image_for_events, event_path(event.id) %>
 	<% end %>
-	<%= link_to event.name, event %>
+	
+		<li><h2><%= link_to event.name, event %></h2></li>
+		<li><strong>Date:</strong> <%= event.date %></li>
+		<li><strong>Place:</strong> <%= event.location %></li>
+		<li><strong>Description:</strong> <%=truncate(event.description, :length =>20)%></li>
+   </info>
+   			<td>
+   		<tr>
+   	</table>
+	
 </li>

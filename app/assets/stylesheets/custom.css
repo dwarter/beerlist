@@ -1,5 +1,5 @@
 .container {
-  width: 710px;
+  width: 950px;
 }
 
 body {
@@ -7,7 +7,9 @@ body {
 }
 
 header {
-  padding-top: 20px;
+	width: 910px;
+	text-align: center;
+  padding: 0px;
  
 }
 
@@ -28,10 +30,12 @@ logo img {
 }
 
 section {
-  margin-top: 1em;
+  width: 600px;
+  margin-top: 2em;
+  margin-left: 1em;
   font-size: 120%;
-  padding: 20px;
-  background: #fff;
+  padding: 20px 30px;
+ background-image: url(list.png);
 }
 
 section h1 {
@@ -50,6 +54,18 @@ a:hover {
   text-decoration: underline;
 }
 
+.homelink {
+	display: block;
+	width: 100px;
+	height: 100px;
+	text-indent: -99999px;
+	background: url('/image/homelinkselect.png') bottom;
+}
+
+homelink:hover {
+	background-position: 0 0;
+	
+}
 a:visited {
   color: #b02700;
 }
@@ -129,20 +145,25 @@ margin: 0 0 15px 15px;
 
 
 .rightoutside { 
-position: absolute;;
-right: 0px; 
-margin: 0 0 15px 15px; 
-z-index:-100; 
+position: absolute;
+top: 250px;
+right: 20px; 
+margin: 0px 0px 0px 0px; 
+background-image: url(userinfo.png);
+padding: 150px 50px 50px 50px;
+
+
 }
 
 
-
-.leftoutside { 
-position: absolute;;
-left: 0px; 
-top: 300px;
-margin: 0 0 15px 15px; 
-z-index:-100; 
+.loweroutside { 
+position: absolute;
+top: 650px;
+right: 80px; 
+margin: 0px 0px 0px 0px; 
+background-image: url(list2.png);
+padding: 100px 20px;
+ 
 }
 
 info ul {
@@ -161,6 +182,13 @@ info2 ul {
  padding: 15px 0 0 15px;
  
 }
+
+info3 {
+	padding: 0;
+	
+}
+
+
 
 footer {
   text-align: center;
@@ -186,11 +214,12 @@ td.main {
   padding: 1em;
 }
 
-td.sidebar {
+.sidebar {
   width: 30%;
+  height: 200px;
   padding: 1em;
   vertical-align: top;
-  background: #ffc;
+  background-color: #ffc;
 }
 
 .profile img.gravatar {
@@ -263,6 +292,7 @@ table.microposts {
 }
 
 table.microposts tr {
+ 
   height: 70px;
 }
 
@@ -270,12 +300,15 @@ table.microposts tr td.gravatar {
   border-top: 1px solid #ccc;
   vertical-align: top;
   width: 50px;
+  
 }
 
 table.microposts tr td.micropost {
-  border-top: 1px solid #ccc;
+  border-top: 10px solid #ccc;
   vertical-align: top;
   padding-top: 10px;
+  
+  
 }
 
 table.microposts tr td.micropost span.timestamp {
@@ -285,7 +318,9 @@ table.microposts tr td.micropost span.timestamp {
 }
 
 div.user_info img {
-  padding-right: 0.1em;
+  padding-right: 0+
+  
+  em;
 }
 
 div.user_info a {
@@ -298,6 +333,7 @@ div.user_info span.user_name {
 
 div.user_info span.microposts {
   font-size: 80%;
+  
 }
 
 form.new_micropost {
@@ -333,17 +369,18 @@ center h1 {
 
 .simple_form div.input {
   margin-bottom: 10px;
+  width: 10px;
 }
 
 .simple_form label {
   float: left;
   width: 100px;
-  text-align: right;
+  text-align: left;
   margin: 2px 10px;
 }
 
 div.boolean, .simple_form input[type='submit'] {
-  margin-left: 120px;
+  margin-left: 20px;
 }
 
 div.boolean label, label.collection_radio {
@@ -399,7 +436,17 @@ eventindex {
 	 
 }
 
+.drinkers {
+	 padding: 1em;
+	  margin-left: 120px;
+	
+}
 
+.lineup {
+	padding: 1em;
+	margin-left: 80px;
+	
+}
 	 
 
 

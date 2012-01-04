@@ -9,20 +9,23 @@
         </ul>
       <% end %>
     </td>
-    <td class="sidebar round">
-      <strong>Name</strong> <%= @user.name %><br />
-      <strong>URL</strong> <%= link_to user_path(@user), @user %><br />
-      <strong>Microposts</strong> <%= @user.microposts.count %>
+    <info2>
+    <td>
+    <strong>Name</strong> <%= @user.name %><br />
+    <strong>URL</strong> <%= link_to user_path(@user), @user %><br />
+    <strong>Microposts</strong> <%= @user.microposts.count %>
       <%= render 'shared/stats' %>
       <% unless @users.empty? %>
         <% @users.each do |user| %>
-					<% if user.gravatar_file_name %>
-						<%= link_to image_tag(user.gravatar.url, :size=>'30x30'), user_path(user) %>
-					<% else %>
-					  <%= link_to gravatar_for(user, :size => 30), user %>
-        	<% end %>
+        <% if @user.gravatar_file_name %>	
+					<%= image_tag(@user.gravatar.url, :size => '30x30')%>
+				<% else %>
+        	<%= link_to default, edit_blah_path(@user), :size => '30x30' %>
+				<% end %>
+					
 				<% end %>
       <% end %>
     </td>
+    </info2>
   </tr>
 </table>

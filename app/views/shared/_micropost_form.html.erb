@@ -1,9 +1,13 @@
+<h3>Post a new beer!</h3>
 <%= simple_form_for @micropost do |f| %>
  <%= render 'shared/error_messages', :object => f.object %>
-  <%= f.input :newbeer %>
+ <%= f.label :newbeer, "New Beer" %>
+ </br>
+  <%= f.text_field :newbeer %>
   <%= f.input :grade, :collection => ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "F+", "F", "F-"]%>
   <%= f.label :content, "Comments" %>
   <%= f.text_area :content %>
+  </br>
   <%= f.button :submit, "Cheers!"%>
  
 <% end %>

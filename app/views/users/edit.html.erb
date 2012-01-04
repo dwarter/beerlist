@@ -38,6 +38,12 @@
 <% end %>
 
 <div>
-  <%= gravatar_for @user %>
-  <a href="http://gravatar.com/emails">change</a>
+ <% if @user.gravatar_file_name %>	
+					<%= image_tag(@user.gravatar.url, :width => '150')%>
+				<% else %>
+        	<%= link_to default, edit_blah_path(@user) %>
+				<% end %>
+   <% if current_user?(@user) %>
+				<%= link_to "Edit Drinker Image", edit_blah_path(@user) %>
+				<% end %>
 </div>

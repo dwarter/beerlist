@@ -1,0 +1,25 @@
+<info2>
+	<ul>
+	<% if @user.microposts.count + @user.following.count +  @user.followers.count > 100%>
+	<li><u>Drinker Rank</u>: Level VI<br/><%= level5 %></li>
+	<% else %>
+	<% if @user.microposts.count + @user.following.count +  @user.followers.count > 50%>
+	<li><u>Drinker Rank</u>: Level V<br/><%= level4 %></li>
+	<% else %>
+	<% if @user.microposts.count + @user.following.count +  @user.followers.count > 20%>
+	<li><u>Drinker Rank</u>: Level IV <br/><%= level3 %></li>
+	<% else %>
+	<% if @user.microposts.count + @user.following.count +  @user.followers.count > 10%> 
+	<li><u>Drinker Rank</u>: Level III<br/><%= level2 %></li>
+	<% else %>
+	<% if @user.microposts.count + @user.following.count +  @user.followers.count > 5%> 
+	<li><u>Drinker Rank</u>: Level II<br/><%= level1 %></li>
+	<% else %>
+	<li><u>Drinker Rank</u>: Level I<br/><%= level0 %></li>
+     <% end %>
+     <% end %>
+     <% end %>
+     <% end %>
+     <% end %>
+     </ul>
+    </info2>

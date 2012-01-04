@@ -1,6 +1,10 @@
 <tr>
   <td class="gravatar">
-    <%= link_to gravatar_for(feed_item.user), feed_item.user %>
+   <% if feed_item.user.gravatar_file_name %>	
+					<%= image_tag(feed_item.user.gravatar.url, :width => '150')%>
+				<% else %>
+        	<%= link_to default %>
+				<% end %>
   </td>
   <td class="micropost">
     <span class="user">

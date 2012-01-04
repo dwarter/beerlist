@@ -6,32 +6,38 @@
     <td class="main">
       <info>
 				<% if @user.gravatar_file_name %>	
-					<%= image_tag(@user.gravatar.url, :height => '100')%>
+					<%= image_tag(@user.gravatar.url, :width => '150')%>
 				<% else %>
         	<%= link_to default, edit_blah_path(@user) %>
 				<% end %>
-				
-				<%= link_to "Edit Drinker Image", edit_blah_path(@user) %>
+		
         <ul>
     	<li><strong><u>Hometown:</u></strong> <%= @user.hometown %></li>
     	<li><strong><u>Beer of Choice:</u></strong> <%= @user.beer %></li>
     	<li><strong><u>Skill:</u></strong> <%= @user.skill %></li>
       </info>
     </ul>
-     
-    <%= render 'follow_form' if signed_in? %>
+    <br>
+    <% if current_user?(@user) %>
+				<%= link_to "Edit Drinker Image", edit_blah_path(@user) %>
+	<% end %>
+	</info>
+	<%= render 'follow_form' if signed_in? %>
+	
+	<%= render 'shared/stats_beerbadge_formula'%>
+    <%= render 'shared/stats_beerbadge'%>
+    
     <% unless @user.microposts.empty? %>
         <table class="microposts" summary="User microposts">
+   </info2>
           <%= render @microposts %>
         </table>
+        <%else%>
+       <h3>You're sober!!</h3>
+       <h4>Earn beer badges by posting new beers you've tried and by following other users!</h4>
       <% end %>
     </td>
-    <td class="sidebar round">
-      <strong>Name</strong> <%= @user.name %><br />
-      <strong>URL</strong> <%= link_to user_path(@user), @user %><br />
-      <strong>Microposts</strong> <%= @user.microposts.count %>
-      <%= render 'shared/stats' %>
-    </td>
+    
   </tr>
 </table>
 
