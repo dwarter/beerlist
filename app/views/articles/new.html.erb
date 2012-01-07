@@ -1,0 +1,13 @@
+<%= form_for(@article) do |f| %>
+	
+	<div class="field">
+		<%= f.text_field :title %>
+		</div>
+		<div class="field">
+			<%= f.text_area :content %>
+		</div>
+		<%= f.file_field :articlepic%>
+		<div class="actions">
+		<%= f.submit "Create" %>
+	</div>
+<% end %>

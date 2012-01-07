@@ -1,0 +1,15 @@
+<info2>
+      
+				<% if @article.articlepic_file_name %>	
+					<%= image_tag(@article.articlepic.url, :width => '300')%>
+					
+				<% else%>
+					<%= default_image_for_articles%>
+							<% end %>
+							<%= link_to "Edit Gravatar Image", edit_articlespic_path(@article) %>
+		
+        <ul>
+    	
+    	<li><strong><u>Story:</u></strong> <%= @article.content %></li>
+    	</ul>
+      </info2>

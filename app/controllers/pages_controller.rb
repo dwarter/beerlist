@@ -8,6 +8,7 @@ class PagesController < ApplicationController
     end
     @mostrecentmicroposts = Micropost.order("created_at desc").limit(3)
     @mostrecentevents = Event.order("created_at desc").limit(1)
+    @mostrecentarticles = Article.order("created_at desc").limit(1)
   end
 
 def beerbasics

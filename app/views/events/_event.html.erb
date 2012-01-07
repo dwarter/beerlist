@@ -9,10 +9,10 @@
   	<%= link_to default_image_for_events, event_path(event.id) %>
 	<% end %>
 	
-		<li><h2><%= link_to event.name, event %></h2></li>
+		<li><h3><%= link_to event.name, event %></h3></li>
 		<li><strong>Date:</strong> <%= event.date %></li>
 		<li><strong>Place:</strong> <%= event.location %></li>
-		<li><strong>Description:</strong> <%=truncate(event.description, :length =>20)%></li>
+		<li><strong>Description:</strong> <%=truncate(event.description, :length =>50)%></li>
    </info>
    			<td>
    		<tr>

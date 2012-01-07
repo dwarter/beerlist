@@ -1,0 +1,19 @@
+<li>
+	<table>
+		<tr>
+			<td>
+   <info>
+	<% if article.articlepic_file_name %>
+		<%= link_to image_tag(article.articlepic.url, :width => '175'), article_path(article.id)%>
+	<% else %>
+  	<%= link_to default_image_for_articles, article_path(article.id) %>
+	<% end %>
+	
+		<li><h3><%= link_to article.title, article %></h3></li>
+		<li><strong>Story:</strong> <%=truncate(article.content, :length =>50)%><%=link_to "Read More", article%></li>
+   </info>
+   			<td>
+   		<tr>
+   	</table>
+	
+</li>

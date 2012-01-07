@@ -177,11 +177,16 @@ info img {
  padding: 0 20px 10px 0;
 }
 
+info2 h1 {
+padding: 0 20px 10px 0;
+}
 info2 ul {
  list-style: none;
  padding: 15px 0 0 15px;
  
 }
+
+
 
 info3 {
 	padding: 0;

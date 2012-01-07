@@ -2,19 +2,24 @@
 	<h1><u>*Home</u></h1>
 	</center>
 <% if signed_in? %>
-  <div id="recentmircoposts">
-  	<% @mostrecentmicroposts.each do |m|%>
-  		<%=truncate(m.content, :length =>5)%>
-  		<%= link_to "microposts", micropost_path(m)%>
-  	<%end%>
-  </div>
   
+   <info2>
+  	<h2>News:</h2>
+  		<% @mostrecentarticles.each do |m|%>
+  		<%=image_tag(m.articlepic, :width => '200')%>
+  		<ul>
+  		<li><h4><u><%=truncate(m.title, :length =>100)%></u></h4></li>
+  		<li><%=truncate(m.content, :length =>200)%></li>
+  		<li><%= link_to "Checkout", article_path(m)%></li>
+  		</ul>
+  	<%end%>
+  </info2>
   <info2>
   	<h2>Upcoming Events:</h2>
   		<% @mostrecentevents.each do |m|%>
   		<ul>
   		<%=image_tag(m.eventpic, :width => '200')%>
-  		<li><%=truncate(m.name, :length =>100)%></li>
+  		<li><h4><u><%=truncate(m.name, :length =>100)%></u></h4></li>
   		<li><%=truncate(m.description, :length =>200)%></li>
   		<li><%= link_to "Checkout", event_path(m)%></li>
   		</ul>

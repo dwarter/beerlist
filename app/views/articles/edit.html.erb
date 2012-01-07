@@ -1,0 +1,5 @@
+<%= form_for @articlepic, :as => :articlespic, :url => {:action => 'articlepic'}, :method => :post do |f| %>
+	
+	<%= f.file_field :articlepic%>
+	<%= f.submit 'Cheers!'%>
+<% end %>

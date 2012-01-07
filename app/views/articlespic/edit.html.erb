@@ -1,0 +1,6 @@
+<%= form_for @articlepic, :as => :articlepic, :url => {:action => 'articlepic'}, :method => :post do |f| %>
+	<%= f.hidden_field :article_id, :value => @article_id %>
+	<%= f.file_field :content%>
+	
+	<%= f.submit 'Cheers!'%>
+<% end %>

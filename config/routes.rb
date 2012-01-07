@@ -1,5 +1,7 @@
 Danapp::Application.routes.draw do
  
+  
+
   resources :forums, :only => [:create, :destroy]
  
 
@@ -8,9 +10,10 @@ Danapp::Application.routes.draw do
 
   resources :blahs
   resources :eventspic
+  resources :articlespic
   match 'gravatar' => 'blahs#gravatar'
   match 'eventpic' => 'eventspic#eventpic'
-
+  match 'articlepic' => 'articlespic#articlepic'
   resources :users do
     member do
       get :following, :followers
@@ -21,6 +24,7 @@ Danapp::Application.routes.draw do
   resources :relationships, :only => [:create, :destroy]
   resources :beers
   resources :events
+  resources :articles
   
 
   match '/beerbasics'=> 'pages#beerbasics'
