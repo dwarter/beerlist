@@ -168,7 +168,7 @@ padding: 100px 20px;
 
 info ul {
  list-style: none;
- padding: 15px 0 0 125px;
+ padding: 15px 0 0 125;
  
 }
 
@@ -188,13 +188,27 @@ info2 ul {
 
 
 
-info3 {
-	padding: 0;
+newshome img {
+ float: right;
+ padding: 0 20px 10px 0;
 	
 }
+newshome ul {
+ list-style: none;
+ padding: 15px 0 0 10px;
+ 
+}
 
-
-
+eventshome img {
+ float: left;
+ padding: 0 20px 10px 0;
+	
+}
+eventshome ul {
+ list-style: none;
+ padding: 15px 0 0 10px;
+ 
+}
 footer {
   text-align: center;
   margin-top: 10px;

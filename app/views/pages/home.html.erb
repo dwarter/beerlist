@@ -3,7 +3,7 @@
 	</center>
 <% if signed_in? %>
   
-   <info2>
+   <newshome>
   	<h2>News:</h2>
   		<% @mostrecentarticles.each do |m|%>
   		<%=image_tag(m.articlepic, :width => '200')%>
@@ -13,18 +13,18 @@
   		<li><%= link_to "Checkout", article_path(m)%></li>
   		</ul>
   	<%end%>
-  </info2>
-  <info2>
-  	<h2>Upcoming Events:</h2>
+  </newshome>
+  <h2>Upcoming Events:</h2>
+  <eventshome>
   		<% @mostrecentevents.each do |m|%>
-  		<ul>
   		<%=image_tag(m.eventpic, :width => '200')%>
+  		<ul>
   		<li><h4><u><%=truncate(m.name, :length =>100)%></u></h4></li>
   		<li><%=truncate(m.description, :length =>200)%></li>
   		<li><%= link_to "Checkout", event_path(m)%></li>
   		</ul>
   	<%end%>
-  </info2>
+  </eventshome>
  
   <table class="front" summary="For signed-in users">
     <tr>
