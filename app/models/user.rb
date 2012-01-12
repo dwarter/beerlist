@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :hometown, :beer, :skill
   
   has_many :microposts, :dependent => :destroy
+  has_many :messages
   has_many :relationships, :foreign_key => "follower_id",
                            :dependent => :destroy
   has_many :participations

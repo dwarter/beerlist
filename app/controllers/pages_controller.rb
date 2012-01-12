@@ -54,5 +54,12 @@ def about
       @micropost = Micropost.new
     end
   end
+  
+  def sponsors
+    @title = "Sponsors"
+    if signed_in?
+      @micropost = Micropost.new
+    end
+  end
 
 end

@@ -25,6 +25,7 @@ Danapp::Application.routes.draw do
   resources :beers
   resources :events
   resources :articles
+  resources :messages
   
 
   match '/beerbasics'=> 'pages#beerbasics'
@@ -34,6 +35,7 @@ Danapp::Application.routes.draw do
   match '/contact' => 'pages#contact'
   match '/about' => 'pages#about'
   
+  match '/sponsors' => 'pages#sponsors'
   match '/help' => 'pages#help'
   match '/signup' => 'users#new'
   match '/signin' => 'sessions#new'

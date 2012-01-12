@@ -7,6 +7,8 @@ gem 'will_paginate', '~> 3.0.pre4'
 gem 'paperclip', '~> 2.3'
 gem 'aws-s3'
 gem 'simple_form'
+gem 'nifty-generators'
+gem 'ancestry'
 group :assets do
   gem 'sass-rails', "~> 3.1.0"
   gem 'coffee-rails', "~> 3.1.0"

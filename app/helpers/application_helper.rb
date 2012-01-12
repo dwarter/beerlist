@@ -62,9 +62,10 @@ module ApplicationHelper
   def profilelink
     image_tag("links/profilelink.png", :alt => "Profile", :class => "round")
   end
-  def editprofilelink
-    image_tag("links/editprofilelink.png", :alt => "Edit Profile", :class => "round")
+   def dasforumlink
+    image_tag("links/dasforumlink.png", :alt => "Das Forum", :class => "round")
   end
+ 
   def signoutlink
     image_tag("links/signoutlink.png", :alt => "Sign out", :class => "round")
   end

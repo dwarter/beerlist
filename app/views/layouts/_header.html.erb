@@ -12,8 +12,8 @@
       <li><%= link_to drinkerslink, users_path %></li>
       
       <% if signed_in? %>
+       <li><%= link_to dasforumlink, messages_path %></li>
       <li><%= link_to profilelink, current_user %></li>
-      <li><%= link_to editprofilelink, edit_user_path(current_user) %></li>
       <% end %>
      
       <% if signed_in? %>
