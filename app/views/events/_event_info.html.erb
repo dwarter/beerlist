@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <info2>
       
 				<% if @event.eventpic_file_name %>	
@@ -14,3 +15,19 @@
     	<li><strong><u>Description:</u></strong> <%= @event.description %></li>
     	</ul>
       </info2>
+=======
+<info>
+	<% if @event.eventpic_file_name %>	
+		<%= image_tag(@event.eventpic.url, :height => '150')%>
+	<% else %>
+		 <%= default_image_for_events%>
+				<% end %>
+				<%= link_to "Edit Gravatar Image", edit_eventspic_path(@event) %>
+  <ul>
+    	<li><strong><u>Date/Time:</u></strong> <%= @event.date %></li>
+    	<li><strong><u>Place:</u></strong> <%= @event.location %></li>
+    	<li><strong><u>Description:</u></strong> <%= @event.description %></li>
+ 	</ul>
+</info>
+
+>>>>>>> 0f1d88fd5012ecaf1f3ad30f50a57d30ff1aaf1c

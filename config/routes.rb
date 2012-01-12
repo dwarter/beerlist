@@ -1,11 +1,13 @@
 Danapp::Application.routes.draw do
  
-  
 
   resources :forums, :only => [:create, :destroy]
  
 
   match 'event_registration' => 'participations#create',  :as => :register_for_event
+  match 'participations/:event_id/destroy' => 'participations#destroy', :as => :destroy_participation
+
+  match 'asdfasdfasdf' => 'participations#create', :as => :register_for_event
   match 'participations/:event_id/destroy' => 'participations#destroy', :as => :destroy_participation
 
   resources :blahs

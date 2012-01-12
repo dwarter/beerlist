@@ -65,7 +65,7 @@ module ApplicationHelper
    def dasforumlink
     image_tag("links/dasforumlink.png", :alt => "Das Forum", :class => "round")
   end
- 
+
   def signoutlink
     image_tag("links/signoutlink.png", :alt => "Sign out", :class => "round")
   end

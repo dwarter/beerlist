@@ -34,9 +34,6 @@ class EventsController < ApplicationController
   	
   	@event = Event.new(params[:event])
   	
-  	
-  
-  	
   	  if @event.save 
   	   
   	   flash[:success] = "You're now hosting an event!"

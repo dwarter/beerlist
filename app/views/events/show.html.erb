@@ -3,6 +3,7 @@
 </center>
 <table>
   <tr>
+<<<<<<< HEAD
     <td>
       
    <%= render :partial => 'event_info' %>
@@ -14,6 +15,20 @@
 		<%= link_to "Unregister", destroy_participation_path(@event) %>
    <% end %>
   <%= @event.participations.count %>
+=======
+    <td class="main">
+      <%= render :partial => 'event_info' %>
+
+			<% check_status_for_an_event(@event) do %> 
+				<%= render :partial => 'event_sign_up_form' %>
+			<% end %>
+			
+			
+			<% unregister_status_check(@event) do %>
+				<%= link_to "Unregister", destroy_participation_path(@event) %>
+			<% end %>
+			
+>>>>>>> 0f1d88fd5012ecaf1f3ad30f50a57d30ff1aaf1c
     </td>
   </tr>
 </table>

@@ -1,0 +1,5 @@
+<%= form_for @event_sign_up, :as => :event_sign_up, :url => register_for_event_path do |f| %>
+	<%= f.hidden_field :user_id, :value => current_user.id %>
+	<%= f.hidden_field :event_id, :value => @event.id %>
+	<%= image_submit_tag("gravatar.png")%>
+<% end %>
